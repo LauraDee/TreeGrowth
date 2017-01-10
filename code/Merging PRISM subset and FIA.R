@@ -1,9 +1,9 @@
-#### Merging PRISM and FIA Data 
+#### Merging PRISM and FIA Data ####
 # using the subset of the matched PRISM and FIA from Grant Domke "LS_data_081016.csv"
 # Laura Dee - Jan 10 2017 
 
 require(data.table)
-reqiuire()
+require(ggplot2)
 setwd("~/Google Drive/Tree growth drivers/data")
 
 ### Read in Data ######
