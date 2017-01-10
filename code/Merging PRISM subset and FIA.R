@@ -1,0 +1,19 @@
+#### Merging PRISM and FIA Data 
+# using the subset of the matched PRISM and FIA from Grant Domke "LS_data_081016.csv"
+
+require(data.table)
+setwd("~/Google Drive/Tree growth drivers/data")
+
+### Read in Data ######
+# matched PRISM and FIA data for a subset of sites (with lat long) 
+## ??? determine what subset grant used.
+  for_prism_dat <- read.csv("LS_data_081016.csv")
+
+  ## Load the FIA data for MN
+  plotdat <- read.csv("MN_PLOT.csv")
+  treespdat <-fread("MN_TREE.csv")
+  conddat <- fread("MN_COND.csv")
+  speciescodes <- read.csv("REF_SPECIES_FIAcodes.csv")
+  countydata <- read.csv("MN_COUNTY.csv")
+
+  
