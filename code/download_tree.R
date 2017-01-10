@@ -1,12 +1,12 @@
-path <- "data"
-dir.create(path, FALSE)
+#path <- "data"
+#dir.create(path, FALSE)
 download_tree <- function(state){
   path <- "data"
   dir.create(path, FALSE)
   state_csv <- paste0(state,"_TREE.csv")
   destfile <- paste0("data/",state_csv)
   dwld <- paste0("https://apps.fs.usda.gov/fiadb-downloads/CSV/",state_csv)
-  downloader::download("https://apps.fs.usda.gov/fiadb-downloads/CSV/AR_TREE.csv", destfile= destfile)
+  downloader::download(dwld, destfile= destfile)
 
 }
 
