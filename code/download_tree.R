@@ -21,7 +21,7 @@ statesFIA <- read.csv("REF_FIAstatecodes.csv")
 state_list <- unique(statesFIA$STATE_ABBR)
 # state_list <- c("CT","MA")
 
-## HABA: will this state_list work or does it need to enter in " " ?  ## 
+## HABA: will this state_list work or does it need to enter in " " ?  ## ??????
 
 #Download state level tree data
 lapply(state_list, download_tree)
