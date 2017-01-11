@@ -13,4 +13,4 @@ state_list <- as.character(unique(statesFIA$STATE_ABBR))
 # state_list <- c("CT","MA")
 
 #Download state level tree data
-lapply(state_list, download_tree)
+lapply(state_list[c(7,22)], download_tree)
