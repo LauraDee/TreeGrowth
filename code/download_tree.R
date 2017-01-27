@@ -21,3 +21,21 @@ state_list <- as.character(unique(statesFIA$STATE_ABBR))
 
 #Download state level tree data
 lapply(state_list[c(7,22)], download_tree)
+
+#Parallel version of function above
+library(parallel)
+no_cores <- detectCores() - 1
+#Initialise cluster
+cl <- makeCluster(no_cores)
+#get library support needed to run the code
+clusterEvalQ(cl, library(downloader))
+#put objects in place that might be needed for the code
+clusterExport(cl,c("state_list"))
+# parallel replicate...
+ptm <- proc.time()
+parLapply(cl,state_list, download_tree)
+
+#gapped_list <-parLapply(cl, 1:50, function(i,...){ x <- six_gap; l<-x[sample(1:nrow(x),round(nrow(x)/2),replace = TRUE),]})
+proc.time() - ptm
+#stop the cluster
+stopCluster(cl)
