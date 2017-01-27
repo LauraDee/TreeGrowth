@@ -3,7 +3,8 @@
 ## Jan 2017 
 
 
-## create a function to download the _TREE.csv files for each state download_tree <- function(state){
+## create a function to download the _TREE.csv files for each state 
+download_tree <- function(state){
   path <- "data"
   dir.create(path, FALSE)
   state_csv <- paste0(state,"_TREE.csv")
